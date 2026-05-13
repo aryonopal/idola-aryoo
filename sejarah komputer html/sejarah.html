@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generasi Komputer</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a002f, #3a0ca3, #7209b7);
+            margin: 0;
+            color: #ffffff;
+        }
+
+        /* NAVBAR BAWAH */
+        .navbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #ff0000, #0066ff);
+            display: flex;
+            justify-content: center;
+            padding: 12px 0;
+            z-index: 1000;
+            box-shadow: 0 -2px 15px rgba(0,0,0,0.4);
+        }
+
+        .navbar a {
+            position: relative;
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 6px 10px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #000;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0%;
+            height: 2px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            padding-top: 20px;
+            padding-bottom: 80px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4dff;
+        }
+
+        /* CARD */
+        .section {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            padding: 20px;
+            margin: 25px auto;
+            border-radius: 20px;
+            width: 75%;
+            box-shadow: 0 0 20px rgba(255,0,255,0.2);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 0 30px rgba(255,0,255,0.5);
+        }
+
+        img {
+            display: block;
+            margin: 10px auto;
+            border-radius: 12px;
+        }
+
+        p {
+            text-align: center;
+            color: #ddd;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ff4dff, #7209b7);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            width: 60%;
+            max-width: 500px;
+            text-align: justify;
+            animation: slideUp 0.4s ease;
+            position: relative;
+            box-shadow: 0 0 25px rgba(255,0,255,0.6);
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 22px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- GEN 1 -->
+<div id="g1" class="section" onclick="openModal('m1')">
+    <h1>Komputer Generasi Pertama</h1>
+    <img src="https://portalnews.stekom.ac.id/media/15764/conversions/komputer-generasi-pertama-400x400.jpg" width="280">
+    <p>Klik untuk lihat penjelasan</p>
+</div>
+
+<div id="m1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('m1')">&times;</span>
+        Komputer generasi pertama menggunakan tabung vakum dan berukuran sangat besar. 
+        Membutuhkan listrik besar dan menjadi dasar perkembangan komputer modern.
+    </div>
+</div>
+
+<!-- GEN 2 -->
+<div id="g2" class="section" onclick="openModal('m2')">
+    <h1>Komputer Generasi Kedua</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwq5jkwfSwD3Asj4R4x0CJOHx88hz5H4EQjNTwofgixQ&s=10" width="280">
+    <p>Klik untuk lihat penjelasan</p>
+</div>
+
+<div id="m2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('m2')">&times;</span>
+        Menggunakan transistor yang membuat komputer lebih kecil, cepat, dan hemat energi.
+    </div>
+</div>
+
+<!-- GEN 3 -->
+<div id="g3" class="section" onclick="openModal('m3')">
+    <h1>Komputer Generasi Ketiga</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd5EKfbQoaxPxgDhlgDv8ZpAv_ynAvvbRhZt9uMYfsbw&s=10" width="280">
+    <p>Klik untuk lihat penjelasan</p>
+</div>
+
+<div id="m3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('m3')">&times;</span>
+        Menggunakan IC (Integrated Circuit) sehingga komputer lebih efisien dan mulai ada sistem operasi.
+    </div>
+</div>
+
+<!-- GEN 4 -->
+<div id="g4" class="section" onclick="openModal('m4')">
+    <h1>Komputer Generasi Keempat</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm9AV2sWXLgXg3lbHEVoHVx_T91fu92O89B3WdfJ0sow&s=10" width="280">
+    <p>Klik untuk lihat penjelasan</p>
+</div>
+
+<div id="m4" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('m4')">&times;</span>
+        Menggunakan mikroprosesor dan mulai muncul komputer pribadi (PC).
+    </div>
+</div>
+
+<!-- GEN 5 -->
+<div id="g5" class="section" onclick="openModal('m5')">
+    <h1>Komputer Generasi Kelima</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSWhJbF2PKzskcSb9F5t_KCKA7RW9_dge8BDyAEnhuEA&s=10" width="280">
+    <p>Klik untuk lihat penjelasan</p>
+</div>
+
+<div id="m5" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('m5')">&times;</span>
+        Berbasis Artificial Intelligence, mampu belajar dan memahami bahasa manusia.
+    </div>
+</div>
+
+</div>
+
+<!-- NAVBAR DI BAWAH -->
+<div class="navbar">
+    <a href="#g1">Gen 1</a>
+    <a href="#g2">Gen 2</a>
+    <a href="#g3">Gen 3</a>
+    <a href="#g4">Gen 4</a>
+    <a href="#g5">Gen 5</a>
+</div>
+
+</body>
+</html>
